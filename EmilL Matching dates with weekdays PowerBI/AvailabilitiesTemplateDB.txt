@@ -1,0 +1,4 @@
+Day Of The Week,       StartTime,                FinishTime,           Employee_ID
+   3           ,       18:00:00,                 21:00:00,                101
+   2           ,       11:00:00,                 17:00:00,                13
+   6           ,       06:00:00,                 20:00:00,                66
