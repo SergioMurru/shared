@@ -1,0 +1,15 @@
+﻿EVALUATE
+FILTER ( orders, orders[status] = "BACKORDER" )
+ORDER BY orders[ordernumber]
+
+EVALUATE 
+FILTER ( orders, orders[ordernumber] = "LIN-320102015")
+
+
+EVALUATE
+FILTER ( order_rows, order_rows[order_id] = 102015)
+
+EVALUATE
+FILTER ( stock, stock[Ordernumber] = "LIN-320102015" )
+
+
