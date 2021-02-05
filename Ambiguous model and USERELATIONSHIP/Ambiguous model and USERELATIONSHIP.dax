@@ -1,0 +1,18 @@
+﻿EVALUATE
+GENERATE(
+    ALL( 'Date'[Date] ),
+    CALCULATETABLE(
+        ProductHistory
+    )
+)
+
+EVALUATE
+GENERATE(
+    ALL( 'Date'[Date] ),
+    CALCULATETABLE(
+        ProductHistory,
+        USERELATIONSHIP ( 'Product'[Name], ProductHistory[Name] )
+    )
+)
+
+
