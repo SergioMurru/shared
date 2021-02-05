@@ -1,4 +1,6 @@
-﻿EVALUATE
+﻿// sample code for https://sergiomurru.com/2021/02/19/ambiguous-model-and-userelationship/
+
+EVALUATE
 GENERATE(
     ALL( 'Date'[Date] ),
     CALCULATETABLE(
