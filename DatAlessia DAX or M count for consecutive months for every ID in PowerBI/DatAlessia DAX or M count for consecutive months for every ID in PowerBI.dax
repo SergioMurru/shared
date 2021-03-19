@@ -1,0 +1,79 @@
+﻿DEFINE
+    COLUMN T[Consecutive Months Missing] =
+        IF(
+            T[Status] = "Missing",
+            VAR FirstYear =
+                MIN( T[Year] )
+            VAR CurrentYear = T[Year]
+            VAR CurrentMonth = T[Month]
+            VAR CurrentYearMonthNumber = ( CurrentYear - FirstYear ) * 12 + CurrentMonth
+            VAR YearMonths =
+                GENERATE(
+                    SELECTCOLUMNS( GENERATESERIES( FirstYear, CurrentYear ), "Year", [Value] ),
+                    SELECTCOLUMNS(
+                        GENERATESERIES( 1, 12, 1 ),
+                        "Month", [Value],
+                        "YearMonthNumber",
+                             ( [Year] - FirstYear ) * 12 + [Value]
+                    )
+                )
+            VAR CurrentIDAndStatusYearMonths =
+                CALCULATETABLE(
+                    ADDCOLUMNS(
+                        SUMMARIZE( T, T[Year], T[Month] ),
+                        "YearMonthNumber",
+                             ( T[Year] - FirstYear ) * 12 + T[Month]
+                    ),
+                    ALLEXCEPT( T, T[ID], T[Status] )
+                )
+            VAR MissingYearMonths =
+                EXCEPT( YearMonths, CurrentIDAndStatusYearMonths )
+            VAR FirstMissingYearMonthNumber =
+                MAXX(
+                    FILTER( MissingYearMonths, [YearMonthNumber] < CurrentYearMonthNumber ),
+                    [YearMonthNumber]
+                )
+            VAR Result = CurrentYearMonthNumber - FirstMissingYearMonthNumber
+            RETURN
+                IF( Result = 1, 0, Result )
+        )
+    COLUMN T[Consecutive Months On Hold] =
+        IF(
+            T[Status] = "On Hold",
+            VAR FirstYear =
+                MIN( T[Year] )
+            VAR CurrentYear = T[Year]
+            VAR CurrentMonth = T[Month]
+            VAR CurrentYearMonthNumber = ( CurrentYear - FirstYear ) * 12 + CurrentMonth
+            VAR YearMonths =
+                GENERATE(
+                    SELECTCOLUMNS( GENERATESERIES( FirstYear, CurrentYear ), "Year", [Value] ),
+                    SELECTCOLUMNS(
+                        GENERATESERIES( 1, 12, 1 ),
+                        "Month", [Value],
+                        "YearMonthNumber",
+                             ( [Year] - FirstYear ) * 12 + [Value]
+                    )
+                )
+            VAR CurrentIDAndStatusYearMonths =
+                CALCULATETABLE(
+                    ADDCOLUMNS(
+                        SUMMARIZE( T, T[Year], T[Month] ),
+                        "YearMonthNumber",
+                             ( T[Year] - FirstYear ) * 12 + T[Month]
+                    ),
+                    ALLEXCEPT( T, T[ID], T[Status] )
+                )
+            VAR MissingYearMonths =
+                EXCEPT( YearMonths, CurrentIDAndStatusYearMonths )
+            VAR FirstMissingYearMonthNumber =
+                MAXX(
+                    FILTER( MissingYearMonths, [YearMonthNumber] < CurrentYearMonthNumber ),
+                    [YearMonthNumber]
+                )
+            VAR Result = CurrentYearMonthNumber - FirstMissingYearMonthNumber
+            RETURN
+                IF( Result = 1, 0, Result )
+        )
+EVALUATE
+T
