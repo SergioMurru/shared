@@ -1,0 +1,20 @@
+﻿DEFINE
+    MEASURE Employee[Head Count] =
+        VAR FromDate =
+            MIN ( 'Date'[Date] )
+        VAR ToDate =
+            MAX ( 'Date'[Date] )
+        RETURN
+            CALCULATE (
+                COUNTROWS ( Employee ),
+                Employee[HireDate] <= ToDate,
+                Employee[LeaveDate] >= FromDate
+                    || ISBLANK ( Employee[LeaveDate] ),
+                REMOVEFILTERS ( 'Date' )
+            )
+EVALUATE
+SUMMARIZECOLUMNS (
+    'Date'[Year Month],
+    "Head_Count", 'Employee'[Head Count]
+)
+ORDER BY 'Date'[Year Month]

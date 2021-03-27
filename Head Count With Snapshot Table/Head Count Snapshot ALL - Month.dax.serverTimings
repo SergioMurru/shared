@@ -1,0 +1,62 @@
+{
+  "FileFormatVersion": 1,
+  "StorageEngineDuration": 1831,
+  "StorageEngineDurationPercentage": 0.0,
+  "FormulaEngineDuration": 22,
+  "FormulaEngineDurationPercentage": 0.0,
+  "StoreageEngineEvents": [
+    {
+      "Class": "VertiPaqSEQueryEnd",
+      "Subclass": "VertiPaqScanInternal",
+      "Query": "SET DC_KIND=\"GEC32\";\r\nSELECT\r\n'Table'[Year Month], 'Table'[ID]\r\nFROM 'Table'\r\n\tLEFT OUTER JOIN 'Table' ON 'Table'[Date]='Table'[Date];\r\n",
+      "Duration": 1814,
+      "CpuTime": 9953,
+      "RowNumber": 1,
+      "EstimatedRows": null,
+      "EstimatedKBytes": null,
+      "HighlightQuery": false,
+      "QueryRichText": "SET DC_KIND=\"GEC32\";\r\nSELECT\r\n'Table'[Year Month], 'Table'[ID]\r\nFROM 'Table'\r\n\tLEFT OUTER JOIN 'Table' ON 'Table'[Date]='Table'[Date];\r\n"
+    },
+    {
+      "Class": "VertiPaqSEQueryEnd",
+      "Subclass": "VertiPaqScanInternal",
+      "Query": "SET DC_KIND=\"GEC32\";\r\nSELECT\r\n'Table'[Year Month], 'Table'[ID]\r\nFROM 'Table'\r\n\tLEFT OUTER JOIN 'Table' ON 'Table'[Date]='Table'[Date];\r\n\r\n\r\n'Estimated size ( volume, marshalling bytes ) : ?, ?'\r\n",
+      "Duration": 1814,
+      "CpuTime": 9953,
+      "RowNumber": 2,
+      "EstimatedRows": null,
+      "EstimatedKBytes": null,
+      "HighlightQuery": false,
+      "QueryRichText": "SET DC_KIND=\"GEC32\";\r\nSELECT\r\n'Table'[Year Month], 'Table'[ID]\r\nFROM 'Table'\r\n\tLEFT OUTER JOIN 'Table' ON 'Table'[Date]='Table'[Date];\r\n\r\n\r\n'Estimated size ( volume, marshalling bytes ) : ?, ?'\r\n"
+    },
+    {
+      "Class": "VertiPaqSEQueryEnd",
+      "Subclass": "VertiPaqScanInternal",
+      "Query": "SET DC_KIND=\"C32\";\r\nSELECT\r\n'Table'[Year Month],\r\nCOUNT () \r\nFROM  $DCOUNT_DATACACHE\r\n\tLEFT OUTER JOIN 'Table' ON 'Table'[Date]='Table'[Date];\r\n",
+      "Duration": 15,
+      "CpuTime": 10031,
+      "RowNumber": 3,
+      "EstimatedRows": null,
+      "EstimatedKBytes": null,
+      "HighlightQuery": false,
+      "QueryRichText": "SET DC_KIND=\"C32\";\r\nSELECT\r\n'Table'[Year Month],\r\nCOUNT () \r\nFROM  $DCOUNT_DATACACHE\r\n\tLEFT OUTER JOIN 'Table' ON 'Table'[Date]='Table'[Date];\r\n"
+    },
+    {
+      "Class": "VertiPaqSEQueryEnd",
+      "Subclass": "VertiPaqScan",
+      "Query": "SET DC_KIND=\"AUTO\";\r\nSELECT\r\n'Table'[Year Month],\r\nDCOUNT ( 'Table'[ID] )\r\nFROM 'Table'\r\n\tLEFT OUTER JOIN 'Table' ON 'Table'[Date]='Table'[Date];\r\n\r\n\r\n'Estimated size ( volume, marshalling bytes ) : 30, 360'\r\n",
+      "Duration": 1831,
+      "CpuTime": 10031,
+      "RowNumber": 4,
+      "EstimatedRows": 30,
+      "EstimatedKBytes": 1,
+      "HighlightQuery": false,
+      "QueryRichText": "SET DC_KIND=\"AUTO\";\r\nSELECT\r\n'Table'[Year Month],\r\nDCOUNT ( 'Table'[ID] )\r\nFROM 'Table'\r\n\tLEFT OUTER JOIN 'Table' ON 'Table'[Date]='Table'[Date];\r\n\r\n\r\n'Estimated size ( volume, marshalling bytes ) : 30, 360'\r\n"
+    }
+  ],
+  "StorageEngineCpu": 10031,
+  "TotalDuration": 1853,
+  "StorageEngineQueryCount": 1,
+  "VertipaqCacheMatches": 0,
+  "TotalCpuDuration": 31
+}

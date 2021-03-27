@@ -1,0 +1,9 @@
+﻿DEFINE
+    MEASURE Employee[Head Count Snapshot ALL] =
+        DISTINCTCOUNT ( 'Employee Snapshot'[ID] )
+EVALUATE
+SUMMARIZECOLUMNS (
+    'Date'[Year Month],
+    "Head_Count_Snapshot_ALL", 'Employee'[Head Count Snapshot ALL]
+)
+ORDER BY 'Date'[Year Month]

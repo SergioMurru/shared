@@ -1,0 +1,12 @@
+﻿DEFINE
+    MEASURE Employee[Head Count Snapshot EOP] =
+        CALCULATE (
+            COUNTROWS ( 'Employee Snapshot' ),
+            LASTDATE ( 'Date'[Date] )
+        )
+EVALUATE
+SUMMARIZECOLUMNS (
+    'Date'[Year Month],
+    "Head_Count_Snapshot_EOP", 'Employee'[Head Count Snapshot EOP]
+)
+ORDER BY 'Date'[Year Month]

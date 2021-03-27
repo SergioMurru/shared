@@ -1,0 +1,86 @@
+{
+  "FileFormatVersion": 1,
+  "StorageEngineDuration": 32,
+  "StorageEngineDurationPercentage": 0.0,
+  "FormulaEngineDuration": 12,
+  "FormulaEngineDurationPercentage": 0.0,
+  "StoreageEngineEvents": [
+    {
+      "Class": "VertiPaqSEQueryEnd",
+      "Subclass": "VertiPaqScanInternal",
+      "Query": "SET DC_KIND=\"DENSE\";\r\nSELECT\r\n'Table'[Date],\r\nCOUNT () \r\nFROM 'Table';\r\n",
+      "Duration": 1,
+      "CpuTime": 0,
+      "RowNumber": 1,
+      "EstimatedRows": null,
+      "EstimatedKBytes": null,
+      "HighlightQuery": false,
+      "QueryRichText": "SET DC_KIND=\"DENSE\";\r\nSELECT\r\n'Table'[Date],\r\nCOUNT () \r\nFROM 'Table';\r\n"
+    },
+    {
+      "Class": "VertiPaqSEQueryEnd",
+      "Subclass": "VertiPaqScan",
+      "Query": "SET DC_KIND=\"AUTO\";\r\nSELECT\r\n'Table'[Date]\r\nFROM 'Table';\r\n\r\n\r\n'Estimated size ( volume, marshalling bytes ) : 1099, 8792'\r\n",
+      "Duration": 1,
+      "CpuTime": 0,
+      "RowNumber": 2,
+      "EstimatedRows": 1099,
+      "EstimatedKBytes": 9,
+      "HighlightQuery": false,
+      "QueryRichText": "SET DC_KIND=\"AUTO\";\r\nSELECT\r\n'Table'[Date]\r\nFROM 'Table';\r\n\r\n\r\n'Estimated size ( volume, marshalling bytes ) : 1099, 8792'\r\n"
+    },
+    {
+      "Class": "VertiPaqSEQueryEnd",
+      "Subclass": "VertiPaqScanInternal",
+      "Query": "SET DC_KIND=\"C32\";\r\nSELECT\r\n'Table'[Date], 'Table'[Year Month]\r\nFROM 'Table';\r\n",
+      "Duration": 2,
+      "CpuTime": 0,
+      "RowNumber": 3,
+      "EstimatedRows": null,
+      "EstimatedKBytes": null,
+      "HighlightQuery": false,
+      "QueryRichText": "SET DC_KIND=\"C32\";\r\nSELECT\r\n'Table'[Date], 'Table'[Year Month]\r\nFROM 'Table';\r\n"
+    },
+    {
+      "Class": "VertiPaqSEQueryEnd",
+      "Subclass": "VertiPaqScan",
+      "Query": "SET DC_KIND=\"AUTO\";\r\nSELECT\r\n'Table'[Date], 'Table'[Year Month]\r\nFROM 'Table';\r\n\r\n\r\n'Estimated size ( volume, marshalling bytes ) : 1096, 4384'\r\n",
+      "Duration": 2,
+      "CpuTime": 0,
+      "RowNumber": 4,
+      "EstimatedRows": 1096,
+      "EstimatedKBytes": 5,
+      "HighlightQuery": false,
+      "QueryRichText": "SET DC_KIND=\"AUTO\";\r\nSELECT\r\n'Table'[Date], 'Table'[Year Month]\r\nFROM 'Table';\r\n\r\n\r\n'Estimated size ( volume, marshalling bytes ) : 1096, 4384'\r\n"
+    },
+    {
+      "Class": "VertiPaqSEQueryEnd",
+      "Subclass": "VertiPaqScanInternal",
+      "Query": "SET DC_KIND=\"DENSE\";\r\nSELECT\r\n'Table'[Date],\r\nCOUNT (  )\r\nFROM 'Table'\r\n\tLEFT OUTER JOIN 'Table' ON 'Table'[Date]='Table'[Date]\r\nWHERE\r\n\t'Table'[Date] INB ( 39478.000000, 39507.000000, 39538.000000, 39568.000000, 39599.000000, 39629.000000, 39660.000000, 39691.000000, 39721.000000, 39752.000000..[36 total values, not all displayed] ) ;\r\n",
+      "Duration": 28,
+      "CpuTime": 172,
+      "RowNumber": 5,
+      "EstimatedRows": null,
+      "EstimatedKBytes": null,
+      "HighlightQuery": false,
+      "QueryRichText": "SET DC_KIND=\"DENSE\";\r\nSELECT\r\n'Table'[Date],\r\nCOUNT (  )\r\nFROM 'Table'\r\n\tLEFT OUTER JOIN 'Table' ON 'Table'[Date]='Table'[Date]\r\nWHERE\r\n\t'Table'[Date] INB ( 39478.000000, 39507.000000, 39538.000000, 39568.000000, 39599.000000, 39629.000000, 39660.000000, 39691.000000, 39721.000000, 39752.000000..[36 total values, not all displayed] ) ;\r\n"
+    },
+    {
+      "Class": "VertiPaqSEQueryEnd",
+      "Subclass": "VertiPaqScan",
+      "Query": "SET DC_KIND=\"AUTO\";\r\nSELECT\r\n'Table'[Date],\r\nCOUNT (  )\r\nFROM 'Table'\r\n\tLEFT OUTER JOIN 'Table' ON 'Table'[Date]='Table'[Date]\r\nWHERE\r\n\t'Table'[Date] IN ( 40512.000000, 40390.000000, 39844.000000, 39994.000000, 40117.000000, 39721.000000, 39872.000000, 40268.000000, 39599.000000, 40147.000000..[36 total values, not all displayed] ) ;\r\n\r\n\r\n'Estimated size ( volume, marshalling bytes ) : 1099, 8792'\r\n",
+      "Duration": 29,
+      "CpuTime": 172,
+      "RowNumber": 6,
+      "EstimatedRows": 1099,
+      "EstimatedKBytes": 9,
+      "HighlightQuery": false,
+      "QueryRichText": "SET DC_KIND=\"AUTO\";\r\nSELECT\r\n'Table'[Date],\r\nCOUNT (  )\r\nFROM 'Table'\r\n\tLEFT OUTER JOIN 'Table' ON 'Table'[Date]='Table'[Date]\r\nWHERE\r\n\t'Table'[Date] IN ( 40512.000000, 40390.000000, 39844.000000, 39994.000000, 40117.000000, 39721.000000, 39872.000000, 40268.000000, 39599.000000, 40147.000000..[36 total values, not all displayed] ) ;\r\n\r\n\r\n'Estimated size ( volume, marshalling bytes ) : 1099, 8792'\r\n"
+    }
+  ],
+  "StorageEngineCpu": 172,
+  "TotalDuration": 44,
+  "StorageEngineQueryCount": 3,
+  "VertipaqCacheMatches": 0,
+  "TotalCpuDuration": 16
+}

@@ -1,0 +1,13 @@
+{
+  "FileFormatVersion": 1,
+  "StorageEngineDuration": 0,
+  "StorageEngineDurationPercentage": 0.0,
+  "FormulaEngineDuration": 1853,
+  "FormulaEngineDurationPercentage": 0.0,
+  "StoreageEngineEvents": [],
+  "StorageEngineCpu": 0,
+  "TotalDuration": 1853,
+  "StorageEngineQueryCount": 0,
+  "VertipaqCacheMatches": 0,
+  "TotalCpuDuration": 31
+}
